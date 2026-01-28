@@ -1,0 +1,215 @@
+"use client"
+
+import { motion } from "framer-motion"
+import { Badge } from "@/components/ui/badge"
+import { Card } from "@/components/ui/card"
+import { Code2, Rocket, Users, Award } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+
+export default function AboutPage() {
+  const technologies = {
+    Frontend: ["HTML", "CSS", "JavaScript", "React", "TypeScript", "Tailwind CSS"],
+    Backend: ["Next.js", "Node.js", "REST API"],
+    Tools: ["Git", "Figma", "VS Code"],
+    Deployment: ["Vercel", "GitHub Repository", "environment Variables"],
+  }
+
+  const achievements = [
+    {
+      icon: Code2,
+      title: "Project Portfolio",
+      description: "Beberapa project web pribadi dan latihan yang terus dikembangkan.",
+    },
+    {
+      icon: Users,
+      title: "Learning Experience",
+      description: "Aktif membangun project untuk memperkuat pemahaman frontend dan backend dasar.",
+    },
+    {
+      icon: Rocket,
+      title: "Consistent Growth",
+      description: "Terus meningkatkan skill melalui praktik dan eksplorasi teknologi web modern.",
+    },
+    {
+      icon: Award,
+      title: "Deployment & Version Control",
+      description: "Berpengalaman menggunakan Git, GitHub, dan deployment untuk mempublikasikan website.",
+    },
+  ]
+
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <motion.header
+        className="fixed top-0 w-full z-50 backdrop-blur-lg bg-background/80 border-b border-border/40"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+          <Link href="/">
+            <motion.div className="text-xl font-bold" whileHover={{ scale: 1.05 }}>
+              {"<Dev />"}
+            </motion.div>
+          </Link>
+          <nav className="flex items-center gap-6">
+            <Link href="/" className="text-sm hover:text-primary transition-colors">
+              Home
+            </Link>
+            <Link href="/about" className="text-sm text-primary font-medium">
+              About
+            </Link>
+            <Link href="/projects" className="text-sm hover:text-primary transition-colors">
+              Projects
+            </Link>
+            <Link href="/contact" className="text-sm hover:text-primary transition-colors">
+              Contact
+            </Link>
+          </nav>
+        </div>
+      </motion.header>
+
+      <div className="pt-24 px-6 pb-20">
+        <div className="max-w-6xl mx-auto">
+          {/* Hero Section */}
+          <motion.div
+            className="mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">About Me</h1>
+            <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
+             Saya adalah seorang fullstack developer yang tertarik membangun website yang rapi, fungsional, dan mudah digunakan.
+Saya menikmati proses mengubah ide menjadi tampilan web yang nyata dan dapat diakses oleh banyak orang.
+            </p>
+          </motion.div>
+
+          {/* Photo and Bio Section */}
+          <motion.div
+            className="grid lg:grid-cols-5 gap-12 mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="lg:col-span-2">
+              <motion.div
+                className="relative aspect-square rounded-2xl overflow-hidden border border-border bg-muted/50"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Image src="/poto2brok.jpg" alt="About Photo" fill className="object-cover" />
+              </motion.div>
+            </div>
+
+            <div className="lg:col-span-3 space-y-6">
+              <h2 className="text-3xl font-bold">My Journey</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Saya mulai belajar web development dari rasa penasaran terhadap cara kerja website, dimulai dari HTML dan CSS.
+Seiring waktu, saya mulai mendalami JavaScript dan berkenalan dengan framework modern untuk membangun aplikasi web yang lebih terstruktur.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Saat ini saya fokus mengembangkan website menggunakan React dan Next.js, serta mempelajari backend dasar untuk mendukung kebutuhan aplikasi.
+Saya percaya bahwa kode yang bersih dan mudah dipahami adalah fondasi dari aplikasi yang baik.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Di luar coding, saya senang mengeksplorasi teknologi baru dan terus mengasah kemampuan melalui project nyata dan pembelajaran mandiri.
+              </p>
+
+              <div className="flex flex-wrap gap-3 pt-4">
+                <Badge variant="secondary" className="px-4 py-2">
+                  Clean Code Mindset
+                </Badge>
+                <Badge variant="secondary" className="px-4 py-2">
+                  Performance Aware
+                </Badge>
+                <Badge variant="secondary" className="px-4 py-2">
+                  Continuous Learner
+                </Badge>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Achievements Grid */}
+          <motion.div
+            className="mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl font-bold mb-8">Achievements</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {achievements.map((achievement, idx) => (
+                <motion.div
+                  key={achievement.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                >
+                  <Card className="p-6 text-center hover:shadow-lg transition-all h-full">
+                    <div className="inline-flex p-3 rounded-xl bg-primary/10 mb-4">
+                      <achievement.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div className="text-2xl font-bold mb-2">{achievement.title}</div>
+                    <div className="text-sm text-muted-foreground">{achievement.description}</div>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Technical Stack */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl font-bold mb-8">Technical Stack</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {Object.entries(technologies).map(([category, techs], idx) => (
+                <motion.div
+                  key={category}
+                  initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                >
+                  <Card className="p-6 hover:shadow-lg transition-all h-full">
+                    <h3 className="text-xl font-bold mb-4">{category}</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {techs.map((tech) => (
+                        <Badge key={tech} variant="outline" className="px-3 py-1">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* CTA */}
+          <motion.div
+            className="mt-20 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold mb-4">Let's Work Together</h2>
+            <p className="text-muted-foreground mb-8">Tertarik untuk berkolaborasi atau punya ide project?
+Silakan hubungi saya, saya terbuka untuk diskusi dan kerja sama.</p>
+            <Button size="lg" asChild>
+              <Link href="/contact">Get In Touch</Link>
+            </Button>
+          </motion.div>
+        </div>
+      </div>
+    </div>
+  )
+}
