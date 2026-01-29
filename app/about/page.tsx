@@ -51,7 +51,13 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/">
             <motion.div className="text-xl font-bold" whileHover={{ scale: 1.05 }}>
-              {"<Dev />"}
+              <Image 
+                              src="/logogw2.png"
+                              alt="Dev Logo"
+                              width={40} 
+                              height={60} 
+                              className="cursor-pointer"
+                            />
             </motion.div>
           </Link>
           <nav className="flex items-center gap-6">

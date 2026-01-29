@@ -116,17 +116,6 @@ Fokus mengubah ide menjadi solusi digital yang bisa digunakan dan dikembangkan.
                   priority
                 />
               </div>
-
-              {/* Floating Badge */}
-              <motion.div
-                className="absolute -bottom-6 -right-6 bg-card border border-border rounded-2xl p-4 shadow-lg"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1 }}
-              >
-                <div className="text-sm font-semibold">1+ Years</div>
-                <div className="text-xs text-muted-foreground">Experience</div>
-              </motion.div>
             </motion.div>
           </motion.div>
         </div>
