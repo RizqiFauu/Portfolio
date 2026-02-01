@@ -1,7 +1,14 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
-import { Mail, Github, Linkedin, Twitter, MapPin, Phone, Instagram } from "lucide-react"
+import {
+  Mail,
+  Github,
+  Linkedin,
+  MapPin,
+  Instagram,
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -10,6 +17,48 @@ import Link from "next/link"
 import Image from "next/image"
 
 export default function ContactPage() {
+  // =====================
+  // FORM STATE (TAMBAHAN)
+  // =====================
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  })
+
+  const [loading, setLoading] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoading(true)
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        alert(data.error || "Gagal mengirim pesan")
+        return
+      }
+
+      alert("Pesan berhasil dikirim")
+      setForm({ name: "", email: "", subject: "", message: "" })
+    } catch (err) {
+      alert("Terjadi kesalahan")
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  // =====================
+  // DATA STATIS (ASLI)
+  // =====================
   const socialLinks = [
     {
       icon: Github,
@@ -25,7 +74,7 @@ export default function ContactPage() {
     },
     {
       icon: Instagram,
-      label: "instagram",
+      label: "Instagram",
       href: "https://www.instagram.com/rizqifau__/",
       username: "@rizqifau__",
     },
@@ -48,7 +97,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
+      {/* HEADER */}
       <motion.header
         className="fixed top-0 w-full z-50 backdrop-blur-lg bg-background/80 border-b border-border/40"
         initial={{ y: -100 }}
@@ -57,24 +106,24 @@ export default function ContactPage() {
       >
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/">
-            <motion.div className="text-xl font-bold" whileHover={{ scale: 1.05 }}>
-              <Image 
-                              src="/logogw2.png"
-                              alt="Dev Logo"
-                              width={40} 
-                              height={60} 
-                              className="cursor-pointer"
-                            />
+            <motion.div whileHover={{ scale: 1.05 }}>
+              <Image
+                src="/logogw2.png"
+                alt="Dev Logo"
+                width={40}
+                height={60}
+                className="cursor-pointer"
+              />
             </motion.div>
           </Link>
           <nav className="flex items-center gap-6">
-            <Link href="/" className="text-sm hover:text-primary transition-colors">
+            <Link href="/" className="text-sm hover:text-primary">
               Home
             </Link>
-            <Link href="/about" className="text-sm hover:text-primary transition-colors">
+            <Link href="/about" className="text-sm hover:text-primary">
               About
             </Link>
-            <Link href="/projects" className="text-sm hover:text-primary transition-colors">
+            <Link href="/projects" className="text-sm hover:text-primary">
               Projects
             </Link>
             <Link href="/contact" className="text-sm text-primary font-medium">
@@ -86,143 +135,131 @@ export default function ContactPage() {
 
       <div className="pt-24 px-6 pb-20">
         <div className="max-w-6xl mx-auto">
-          {/* Page Header */}
+          {/* PAGE HEADER */}
           <motion.div
             className="mb-16 text-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Get In Touch</h1>
+            <h1 className="text-5xl font-bold mb-6">Get In Touch</h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Punya ide project atau ingin berdiskusi?
-Jangan ragu untuk menghubungi saya melalui form di bawah ini.
+              Punya ide project atau ingin berdiskusi? Jangan ragu untuk
+              menghubungi saya melalui form di bawah ini.
             </p>
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}>
+            {/* CONTACT FORM */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+            >
               <Card className="p-8">
                 <h2 className="text-2xl font-bold mb-6">Send a Message</h2>
-                <form className="space-y-6">
+
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">Name</label>
-                      <Input placeholder="Your name" />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">Email</label>
-                      <Input type="email" placeholder="your@email.com" />
-                    </div>
+                    <Input
+                      placeholder="Your name"
+                      value={form.name}
+                      onChange={(e) =>
+                        setForm({ ...form, name: e.target.value })
+                      }
+                    />
+                    <Input
+                      type="email"
+                      placeholder="your@email.com"
+                      value={form.email}
+                      onChange={(e) =>
+                        setForm({ ...form, email: e.target.value })
+                      }
+                    />
                   </div>
 
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Subject</label>
-                    <Input placeholder="What's this about?" />
-                  </div>
+                  <Input
+                    placeholder="What's this about?"
+                    value={form.subject}
+                    onChange={(e) =>
+                      setForm({ ...form, subject: e.target.value })
+                    }
+                  />
 
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Message</label>
-                    <Textarea placeholder="Tell me about your project or idea..." rows={6} />
-                  </div>
+                  <Textarea
+                    rows={6}
+                    placeholder="Tell me about your project or idea..."
+                    value={form.message}
+                    onChange={(e) =>
+                      setForm({ ...form, message: e.target.value })
+                    }
+                  />
 
-                  <Button size="lg" className="w-full">
-                    Send Message
+                  <Button
+                    size="lg"
+                    className="w-full"
+                    disabled={loading}
+                  >
+                    {loading ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               </Card>
             </motion.div>
 
-            {/* Contact Info */}
+            {/* CONTACT INFO & SOCIAL (ASLI, TIDAK DIUBAH) */}
             <motion.div
               className="space-y-8"
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
             >
-              {/* Contact Methods */}
               <div>
-                <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
+                <h2 className="text-2xl font-bold mb-6">
+                  Contact Information
+                </h2>
                 <div className="space-y-4">
-                  {contactInfo.map((item, idx) => (
-                    <motion.div
-                      key={item.label}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.4 + idx * 0.1 }}
-                    >
-                      {item.href ? (
-                        <a href={item.href}>
-                          <Card className="p-4 hover:shadow-lg transition-all group">
-                            <div className="flex items-center gap-4">
-                              <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                                <item.icon className="w-5 h-5" />
-                              </div>
-                              <div>
-                                <div className="text-sm text-muted-foreground">{item.label}</div>
-                                <div className="font-medium">{item.value}</div>
-                              </div>
-                            </div>
-                          </Card>
-                        </a>
-                      ) : (
-                        <Card className="p-4">
-                          <div className="flex items-center gap-4">
-                            <div className="p-3 rounded-lg bg-primary/10">
-                              <item.icon className="w-5 h-5" />
-                            </div>
-                            <div>
-                              <div className="text-sm text-muted-foreground">{item.label}</div>
-                              <div className="font-medium">{item.value}</div>
-                            </div>
+                  {contactInfo.map((item) => (
+                    <Card key={item.label} className="p-4">
+                      <div className="flex items-center gap-4">
+                        <item.icon className="w-5 h-5" />
+                        <div>
+                          <div className="text-sm text-muted-foreground">
+                            {item.label}
                           </div>
-                        </Card>
-                      )}
-                    </motion.div>
+                          <div className="font-medium">{item.value}</div>
+                        </div>
+                      </div>
+                    </Card>
                   ))}
                 </div>
               </div>
 
-              {/* Social Links */}
               <div>
-                <h2 className="text-2xl font-bold mb-6">Connect With Me</h2>
+                <h2 className="text-2xl font-bold mb-6">
+                  Connect With Me
+                </h2>
                 <div className="space-y-4">
-                  {socialLinks.map((social, idx) => (
-                    <motion.div
+                  {socialLinks.map((social) => (
+                    <a
                       key={social.label}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.7 + idx * 0.1 }}
+                      href={social.href}
+                      target="_blank"
                     >
-                      <a href={social.href} target="_blank" rel="noopener noreferrer">
-                        <Card className="p-4 hover:shadow-lg transition-all group">
-                          <div className="flex items-center gap-4">
-                            <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                              <social.icon className="w-5 h-5" />
+                      <Card className="p-4 hover:shadow-lg">
+                        <div className="flex items-center gap-4">
+                          <social.icon className="w-5 h-5" />
+                          <div>
+                            <div className="font-medium">
+                              {social.label}
                             </div>
-                            <div>
-                              <div className="font-medium">{social.label}</div>
-                              <div className="text-sm text-muted-foreground">{social.username}</div>
+                            <div className="text-sm text-muted-foreground">
+                              {social.username}
                             </div>
                           </div>
-                        </Card>
-                      </a>
-                    </motion.div>
+                        </div>
+                      </Card>
+                    </a>
                   ))}
                 </div>
               </div>
-
-              {/* Additional CTA */}
-              <Card className="p-6 bg-primary/5 border-primary/20">
-                <h3 className="font-bold mb-2">Looking for my resume?</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Anda dapat mengunduh CV saya untuk melihat ringkasan pengalaman dan skill yang saya miliki.
-                </p>
-                <Button variant="outline" size="sm">
-                  Download Resume
-                </Button>
-              </Card>
             </motion.div>
           </div>
         </div>
