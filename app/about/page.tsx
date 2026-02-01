@@ -20,22 +20,22 @@ export default function AboutPage() {
     {
       icon: Code2,
       title: "Project Portfolio",
-      description: "Beberapa project web pribadi dan latihan yang terus dikembangkan.",
+      description: "Mengembangkan beberapa project web pribadi sebagai sarana belajar dan eksplorasi teknologi frontend dan backend.",
     },
     {
       icon: Users,
       title: "Learning Experience",
-      description: "Aktif membangun project untuk memperkuat pemahaman frontend dan backend dasar.",
+      description: "Membangun aplikasi web sederhana dengan integrasi API dan database sebagai bagian dari proses pembelajaran.",
     },
     {
       icon: Rocket,
       title: "Consistent Growth",
-      description: "Terus meningkatkan skill melalui praktik dan eksplorasi teknologi web modern.",
+      description: "Berkomitmen meningkatkan skill secara konsisten melalui latihan, debugging, dan pengembangan project nyata.",
     },
     {
       icon: Award,
       title: "Deployment & Version Control",
-      description: "Berpengalaman menggunakan Git, GitHub, dan deployment untuk mempublikasikan website.",
+      description: "Terbiasa menggunakan Git, GitHub, dan Vercel untuk mengelola kode dan mempublikasikan aplikasi web.",
     },
   ]
 
@@ -52,7 +52,7 @@ export default function AboutPage() {
           <Link href="/">
             <motion.div className="text-xl font-bold" whileHover={{ scale: 1.05 }}>
               <Image 
-                              src="/logogw2.png"
+                              src="/logo-rizqi-v0.png"
                               alt="Dev Logo"
                               width={40} 
                               height={60} 
@@ -88,8 +88,8 @@ export default function AboutPage() {
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">About Me</h1>
             <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-             Saya adalah seorang fullstack developer yang tertarik membangun website yang rapi, fungsional, dan mudah digunakan.
-Saya menikmati proses mengubah ide menjadi tampilan web yang nyata dan dapat diakses oleh banyak orang.
+             Saya adalah mahasiswa dan developer web yang fokus membangun website yang rapi, fungsional, dan mudah digunakan.
+Saya terbiasa mengembangkan aplikasi web yang terhubung ke backend dan database untuk mengelola data secara dinamis.
             </p>
           </motion.div>
 
@@ -113,28 +113,17 @@ Saya menikmati proses mengubah ide menjadi tampilan web yang nyata dan dapat dia
             <div className="lg:col-span-3 space-y-6">
               <h2 className="text-3xl font-bold">My Journey</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Saya mulai belajar web development dari rasa penasaran terhadap cara kerja website, dimulai dari HTML dan CSS.
-Seiring waktu, saya mulai mendalami JavaScript dan berkenalan dengan framework modern untuk membangun aplikasi web yang lebih terstruktur.
+                Perjalanan saya di dunia web development dimulai dari rasa penasaran terhadap cara kerja sebuah website.
+Saya memulai dari dasar seperti HTML dan CSS, lalu berkembang ke JavaScript untuk membangun tampilan yang lebih interaktif.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Saat ini saya fokus mengembangkan website menggunakan React dan Next.js, serta mempelajari backend dasar untuk mendukung kebutuhan aplikasi.
-Saya percaya bahwa kode yang bersih dan mudah dipahami adalah fondasi dari aplikasi yang baik.
+                Saat ini saya fokus menggunakan React dan Next.js untuk membangun aplikasi web modern, serta mempelajari backend dasar.
+Saya sudah terbiasa menghubungkan frontend dengan API dan database untuk kebutuhan penyimpanan dan pengelolaan data.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Di luar coding, saya senang mengeksplorasi teknologi baru dan terus mengasah kemampuan melalui project nyata dan pembelajaran mandiri.
+                Saya percaya bahwa kode yang rapi, mudah dibaca, dan konsisten adalah kunci dari aplikasi yang dapat dikembangkan dalam jangka panjang.
+Di luar coding, saya terus belajar melalui project nyata dan eksplorasi teknologi web terbaru.Saya tertarik memahami bagaimana sebuah aplikasi bekerja secara menyeluruh, mulai dari tampilan hingga proses data di server.
               </p>
-
-              <div className="flex flex-wrap gap-3 pt-4">
-                <Badge variant="secondary" className="px-4 py-2">
-                  Clean Code Mindset
-                </Badge>
-                <Badge variant="secondary" className="px-4 py-2">
-                  Performance Aware
-                </Badge>
-                <Badge variant="secondary" className="px-4 py-2">
-                  Continuous Learner
-                </Badge>
-              </div>
             </div>
           </motion.div>
 

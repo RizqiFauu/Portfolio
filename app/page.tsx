@@ -63,8 +63,8 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              Saya membangun website yang bersih, responsif, dan fungsional menggunakan teknologi web modern.
-Fokus mengubah ide menjadi solusi digital yang bisa digunakan dan dikembangkan.
+              Saya membangun aplikasi web yang bersih, responsif, dan fungsional menggunakan teknologi web modern.
+Terbiasa menghubungkan frontend, backend, dan database untuk menghasilkan solusi digital yang dapat digunakan dan dikembangkan.
             </motion.p>
 
             <motion.div
@@ -149,13 +149,13 @@ Fokus mengubah ide menjadi solusi digital yang bisa digunakan dan dikembangkan.
             {[
               {
                 title: "Projects",
-                description: "Jelajahi portfolio website dan aplikasi web yang telah saya kerjakan.",
+                description: "Jelajahi project aplikasi web yang saya bangun sebagai sarana belajar dan pengembangan skill fullstack.",
                 href: "/projects",
                 delay: 0,
               },
               {
                 title: "About",
-                description: "Pelajari lebih lanjut tentang perjalanan, skill, dan pengalaman saya di bidang pengembangan web.",
+                description: "Kenali lebih jauh perjalanan saya mempelajari web development, teknologi yang digunakan, dan pendekatan saya dalam membangun aplikasi.",
                 href: "/about",
                 delay: 0.1,
               },

@@ -108,7 +108,7 @@ export default function ContactPage() {
           <Link href="/">
             <motion.div whileHover={{ scale: 1.05 }}>
               <Image
-                src="/logogw2.png"
+                src="/logo-rizqi-v0.png"
                 alt="Dev Logo"
                 width={40}
                 height={60}

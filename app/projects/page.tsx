@@ -125,7 +125,7 @@ export default function ProjectsPage() {
           <Link href="/">
             <motion.div className="text-xl font-bold" whileHover={{ scale: 1.05 }}>
               <Image 
-                src="/logogw2.png"
+                src="/logo-rizqi-v0.png"
                 alt="Dev Logo"
                 width={40} 
                 height={60} 

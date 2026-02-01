@@ -4,56 +4,70 @@ import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist" })
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" })
 
 export const metadata: Metadata = {
-  title: "Creative Developer Portfolio",
+  title: "Rizqi Fauzi | Software Engineer",
   description:
-    "Fullstack developer portfolio showcasing modern web applications, creative solutions, and technical expertise.",
-  keywords: ["fullstack developer", "web developer", "react", "next.js", "typescript", "portfolio"],
-  authors: [{ name: "Your Name" }],
-  creator: "Your Name",
+    "Rizqi Fauzi is a Software Engineer and Fullstack Developer building modern, performant, and scalable web applications.",
+  keywords: [
+    "Rizqi Fauzi",
+    "Software Engineer",
+    "Fullstack Developer",
+    "Web Developer",
+    "Next.js",
+    "TypeScript",
+    "Portfolio",
+  ],
+  authors: [{ name: "Rizqi Fauzi" }],
+  creator: "Rizqi Fauzi",
+
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "Creative Developer Portfolio",
-    description: "Fullstack developer crafting elegant web experiences",
-    siteName: "Developer Portfolio",
+    title: "Rizqi Fauzi | Software Engineer",
+    description:
+      "Fullstack developer crafting clean, modern, and scalable web experiences.",
+    siteName: "Rizqi Fauzi",
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Creative Developer Portfolio",
-    description: "Fullstack developer portfolio",
+    title: "Rizqi Fauzi | Software Engineer",
+    description:
+      "Fullstack developer crafting clean, modern, and scalable web experiences.",
   },
+
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
+        url: "/logo-rizqi-v0.png",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/icon-dark-32x32.png",
+        url: "/logo-rizqi-v0.png",
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/icon.svg",
+        url: "/icon-v2.svg",
         type: "image/svg+xml",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: "/logo-rizqi-v0.png",
   },
-    generator: 'v0.app'
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`font-sans antialiased`}>
+      <body
+        className={`${geist.variable} ${geistMono.variable} font-sans antialiased`}
+      >
         {children}
         <Analytics />
       </body>
