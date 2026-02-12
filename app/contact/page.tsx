@@ -84,8 +84,8 @@ export default function ContactPage() {
     {
       icon: Mail,
       label: "Email",
-      value: "rizqi553218@gmail.com",
-      href: "mailto:rizqi553218@gmail.com",
+      value: "rizqifauzi.dev@gmail.com",
+      href: "mailto:rizqifauzi.dev@gmail.com",
     },
     {
       icon: MapPin,
