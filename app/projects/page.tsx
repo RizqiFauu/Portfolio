@@ -39,7 +39,7 @@ export default function ProjectsPage() {
         category: "fullstack",
         year: "2025",
         metrics: ["CRUD System", "Realtime Data", "File Upload"],
-        github: "#",
+        github: "https://github.com/Mohammed1708/himsi_statis",
         demo: "https://himsi-web.vercel.app/",
       },
 

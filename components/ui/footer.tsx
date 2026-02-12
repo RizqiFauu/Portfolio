@@ -59,10 +59,9 @@ export default function Footer() {
               Rizqi Fauzi
             </h3>
 
-            <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
-              Fullstack developer focused on building modern,
-              scalable, and high-performance web experiences.
-            </p>
+              <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
+                Fullstack developer yang fokus membangun web modern, scalable, dan berkinerja tinggi.
+              </p>
 
             {/* CTA */}
             <Link href="/contact">
