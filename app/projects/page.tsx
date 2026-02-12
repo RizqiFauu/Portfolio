@@ -16,62 +16,65 @@ export default function ProjectsPage() {
 
   const projects = [
       {
-      title: "HIMSI Website",
-      description: "Fullstack organization website",
-      longDescription:
-        "Developed a collaborative web platform for HIMSI with task management features, team collaboration tools, and data storage using Supabase. Built as a team project by the research and development division with a focus on usability and efficient workflow.",
-      image: "/himsi.png",
-      tags: ["Next.js", "Supabase", "Tailwind CSS", "Fullstack"],
-      category: "fullstack",
-      year: "2025",
-      metrics: ["Team project", "Supabase DB", "Task system"],
-      github: "#",
-      demo: "https://himsi-statis.vercel.app/",
-    },
-
-    
-        {
-      title: "Personal Portfolio Website",
-      description: "Fullstack developer portfolio with project showcase and contact message storage",
-      longDescription:
-        "Built a modern developer portfolio featuring project showcase, responsive design, and contact form with message storage using Neon PostgreSQL database. Designed with clean UI, smooth user experience, and production-ready deployment.",
-      image: "/portfolio.png",
-      tags: ["Next.js", "Tailwind CSS", "Neon DB", "Fullstack"],
-      category: "fullstack",
-      year: "2025",
-      metrics: ["Responsive design", "Db integration", "contact system"],
-      github: "https://github.com/RizqiFauu/Portfolio",
-      demo: "https://rizqifauzi.vercel.app/",
-    },
+        title: "Apex Group Company Profile",
+        description: "Corporate company profile website for an engineering and technology firm",
+        longDescription:
+          "Developed a modern corporate website for Apex Group featuring company overview, vision and mission, core values, and leadership team showcase. Designed with a professional layout, responsive design, and clear information structure to reflect the company's brand and credibility.",
+        image: "/apexgroup.png",
+        tags: ["Next.js", "Tailwind CSS", "Responsive Design", "UI/UX"],
+        category: "frontend",
+        year: "2025",
+        metrics: ["Professional", "Responsive design", "Optimized performance"],
+        github: "https://github.com/RizqiFauu/apex-grup",
+        demo: "https://apex-grup.vercel.app/",
+      },
 
       {
-      title: "Apex Group Company Profile",
-      description: "Corporate company profile website for an engineering and technology firm",
-      longDescription:
-        "Developed a modern corporate website for Apex Group featuring company overview, vision and mission, core values, and leadership team showcase. Designed with a professional layout, responsive design, and clear information structure to reflect the company's brand and credibility.",
-      image: "/apexgroup.png",
-      tags: ["Next.js", "Tailwind CSS", "Responsive Design", "UI/UX"],
-      category: "frontend",
-      year: "2025",
-      metrics: ["Professional", "Responsive design", "Optimized performance"],
-      github: "https://github.com/RizqiFauu/apex-grup",
-      demo: "https://apex-grup.vercel.app/",
-    },
+        title: "HIMSI Management Website",
+        description: "Fullstack organization platform with dashboard, task management, and team collaboration",
+        longDescription:
+          "Developed a fullstack web platform for HIMSI as a collaborative project by the research and development division. Features include internal dashboard, task management system, event management, CRUD data operations, file upload, and real-time updates using Supabase. Built with focus on usability, collaboration, and efficient workflow management.",
+        image: "/himsi-web-preview.png",
+        tags: ["Next.js", "Supabase", "Tailwind CSS", "Fullstack"],
+        category: "fullstack",
+        year: "2023",
+        metrics: ["CRUD System", "Realtime Data", "File Upload"],
+        github: "#",
+        demo: "https://himsi-web.vercel.app/",
+      },
 
-        {
-      title: "Restaurant Website UI",
-      description: "Modern restaurant website UI with menu showcase, reservation section, and contact page",
-      longDescription:
-        "Designed and developed a modern restaurant website interface focused on user experience and clean layout. Features include menu showcase, responsive design, reservation section, contact form, and location map integration.",
-      image: "/resto.v1.png",
-      tags: ["Next.js", "Tailwind CSS", "Responsive Design", "UI/UX"],
-      category: "frontend",
-      year: "2025",
-      metrics: ["Fully responsive", "Modern UI", "Optimized performance"],
-      github: "https://github.com/RizqiFauu/restoran.v1-simple",
-      demo: "https://restoran-v1-simple.vercel.app/",
-    },
-        {
+    
+      {
+        title: "Personal Portfolio Website",
+        description: "Fullstack developer portfolio with project showcase and contact message storage",
+        longDescription:
+          "Built a modern developer portfolio featuring project showcase, responsive design, and contact form with message storage using Neon PostgreSQL database. Designed with clean UI, smooth user experience, and production-ready deployment.",
+        image: "/portfolio.png",
+        tags: ["Next.js", "Tailwind CSS", "Neon DB", "Fullstack"],
+        category: "fullstack",
+        year: "2025",
+        metrics: ["Responsive design", "Db integration", "contact system"],
+        github: "https://github.com/RizqiFauu/Portfolio",
+        demo: "https://rizqifauzi.vercel.app/",
+      },
+
+     
+
+      {
+        title: "Restaurant Website UI",
+        description: "Modern restaurant website UI with menu showcase, reservation section, and contact page",
+        longDescription:
+          "Designed and developed a modern restaurant website interface focused on user experience and clean layout. Features include menu showcase, responsive design, reservation section, contact form, and location map integration.",
+        image: "/resto.v1.png",
+        tags: ["Next.js", "Tailwind CSS", "Responsive Design", "UI/UX"],
+        category: "frontend",
+        year: "2025",
+        metrics: ["Fully responsive", "Modern UI", "Optimized performance"],
+        github: "https://github.com/RizqiFauu/restoran.v1-simple",
+        demo: "https://restoran-v1-simple.vercel.app/",
+      },
+      
+      {
       title: "Nexus Digital Agency Website",
       description: "Modern digital agency website with company profile, services, and team showcase",
       longDescription:
