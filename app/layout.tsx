@@ -3,6 +3,8 @@ import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
+import Navbar from "@/components/ui/navbar"
+import Footer from "@/components/ui/footer"
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist" })
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" })
@@ -70,6 +72,10 @@ export default function RootLayout({
       >
         {children}
         <Analytics />
+        <Navbar />
+        <Footer />
+      <Analytics />
+
       </body>
     </html>
   )

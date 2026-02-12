@@ -97,42 +97,6 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* HEADER */}
-      <motion.header
-        className="fixed top-0 w-full z-50 backdrop-blur-lg bg-background/80 border-b border-border/40"
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/">
-            <motion.div whileHover={{ scale: 1.05 }}>
-              <Image
-                src="/logo-rizqi-v0.png"
-                alt="Dev Logo"
-                width={40}
-                height={60}
-                className="cursor-pointer"
-              />
-            </motion.div>
-          </Link>
-          <nav className="flex items-center gap-6">
-            <Link href="/" className="text-sm hover:text-primary">
-              Home
-            </Link>
-            <Link href="/about" className="text-sm hover:text-primary">
-              About
-            </Link>
-            <Link href="/projects" className="text-sm hover:text-primary">
-              Projects
-            </Link>
-            <Link href="/contact" className="text-sm text-primary font-medium">
-              Contact
-            </Link>
-          </nav>
-        </div>
-      </motion.header>
-
       <div className="pt-24 px-6 pb-20">
         <div className="max-w-6xl mx-auto">
           {/* PAGE HEADER */}
