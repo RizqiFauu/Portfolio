@@ -37,7 +37,7 @@ export default function ProjectsPage() {
         image: "/himsi.png",
         tags: ["Next.js", "Supabase", "Tailwind CSS", "Fullstack"],
         category: "fullstack",
-        year: "2023",
+        year: "2025",
         metrics: ["CRUD System", "Realtime Data", "File Upload"],
         github: "#",
         demo: "https://himsi-web.vercel.app/",
