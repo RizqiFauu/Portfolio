@@ -118,10 +118,6 @@ export default function Footer() {
           <p>
             © {new Date().getFullYear()} Rizqi Fauzi. All rights reserved.
           </p>
-
-          <p className="opacity-70">
-            Built with Next.js + TypeScript + Tailwind
-          </p>
         </div>
       </div>
     </motion.footer>
