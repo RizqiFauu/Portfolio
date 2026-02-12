@@ -15,84 +15,76 @@ export default function ProjectsPage() {
   const [searchQuery, setSearchQuery] = useState("")
 
   const projects = [
-    {
-      title: "E-Commerce Platform",
-      description: "Full-stack marketplace with real-time inventory, payment processing, and admin dashboard",
+      {
+      title: "HIMSI Website",
+      description: "Fullstack organization website",
       longDescription:
-        "Built a complete e-commerce solution with Stripe integration, real-time inventory tracking, order management, and comprehensive analytics dashboard.",
-      image: "/modern-ecommerce-dashboard.png",
-      tags: ["Next.js", "PostgreSQL", "Stripe", "Redis"],
+        "Developed a collaborative web platform for HIMSI with task management features, team collaboration tools, and data storage using Supabase. Built as a team project by the research and development division with a focus on usability and efficient workflow.",
+      image: "/himsi.png",
+      tags: ["Next.js", "Supabase", "Tailwind CSS", "Fullstack"],
       category: "fullstack",
-      year: "2024",
-      metrics: ["50K+ users", "99.9% uptime", "$2M+ processed"],
+      year: "2025",
+      metrics: ["Team project", "Supabase DB", "Task system"],
       github: "#",
-      demo: "#",
+      demo: "https://himsi-statis.vercel.app/",
     },
-    {
-      title: "AI Analytics Dashboard",
-      description: "Real-time data visualization platform with ML-powered insights and predictive analytics",
+
+    
+        {
+      title: "Personal Portfolio Website",
+      description: "Fullstack developer portfolio with project showcase and contact message storage",
       longDescription:
-        "Created an advanced analytics platform that processes terabytes of data, provides AI-powered insights, and beautiful visualizations using D3.js and custom charts.",
-      image: "/analytics-dashboard-charts.png",
-      tags: ["React", "Python", "TensorFlow", "D3.js"],
+        "Built a modern developer portfolio featuring project showcase, responsive design, and contact form with message storage using Neon PostgreSQL database. Designed with clean UI, smooth user experience, and production-ready deployment.",
+      image: "/portfolio.png",
+      tags: ["Next.js", "Tailwind CSS", "Neon DB", "Fullstack"],
+      category: "fullstack",
+      year: "2025",
+      metrics: ["Responsive design", "Db integration", "contact system"],
+      github: "https://github.com/RizqiFauu/Portfolio",
+      demo: "https://rizqifauzi.vercel.app/",
+    },
+
+      {
+      title: "Apex Group Company Profile",
+      description: "Corporate company profile website for an engineering and technology firm",
+      longDescription:
+        "Developed a modern corporate website for Apex Group featuring company overview, vision and mission, core values, and leadership team showcase. Designed with a professional layout, responsive design, and clear information structure to reflect the company's brand and credibility.",
+      image: "/apexgroup.png",
+      tags: ["Next.js", "Tailwind CSS", "Responsive Design", "UI/UX"],
       category: "frontend",
-      year: "2024",
-      metrics: ["10TB data processed", "Real-time updates", "AI predictions"],
-      github: "#",
-      demo: "#",
+      year: "2025",
+      metrics: ["Professional", "Responsive design", "Optimized performance"],
+      github: "https://github.com/RizqiFauu/apex-grup",
+      demo: "https://apex-grup.vercel.app/",
     },
-    {
-      title: "DevOps Automation Tool",
-      description: "CI/CD pipeline orchestration with automated testing, deployment, and monitoring",
+
+        {
+      title: "Restaurant Website UI",
+      description: "Modern restaurant website UI with menu showcase, reservation section, and contact page",
       longDescription:
-        "Developed a comprehensive DevOps tool that automates deployment pipelines, handles 500+ deployments daily, and provides detailed monitoring and alerting.",
-      image: "/devops-pipeline-interface.jpg",
-      tags: ["Go", "Docker", "Kubernetes", "Terraform"],
-      category: "backend",
-      year: "2023",
-      metrics: ["500+ deploys/day", "Zero downtime", "Multi-cloud"],
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "Social Media App",
-      description: "Mobile-first social platform with real-time messaging and content sharing",
-      longDescription:
-        "Built a modern social media application with real-time chat, story features, and content discovery algorithms.",
-      image: "/modern-social-media-app-interface.jpg",
-      tags: ["React Native", "Node.js", "MongoDB", "Socket.io"],
-      category: "fullstack",
-      year: "2023",
-      metrics: ["100K+ users", "Real-time chat", "1M+ posts"],
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "Task Management System",
-      description: "Collaborative project management tool with kanban boards and team features",
-      longDescription:
-        "Created a powerful project management tool with drag-and-drop boards, time tracking, and team collaboration features.",
-      image: "/project-management-kanban-board-interface.jpg",
-      tags: ["Next.js", "PostgreSQL", "Prisma", "tRPC"],
-      category: "fullstack",
-      year: "2023",
-      metrics: ["10K+ projects", "Team collab", "Time tracking"],
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "Weather Forecast App",
-      description: "Beautiful weather application with detailed forecasts and interactive maps",
-      longDescription:
-        "Designed an elegant weather app with hourly/daily forecasts, weather maps, and location-based alerts.",
-      image: "/modern-weather-forecast-app-with-maps.jpg",
-      tags: ["React", "TypeScript", "Mapbox", "Weather API"],
+        "Designed and developed a modern restaurant website interface focused on user experience and clean layout. Features include menu showcase, responsive design, reservation section, contact form, and location map integration.",
+      image: "/resto.v1.png",
+      tags: ["Next.js", "Tailwind CSS", "Responsive Design", "UI/UX"],
       category: "frontend",
-      year: "2022",
-      metrics: ["50K+ users", "Real-time data", "Global coverage"],
-      github: "#",
-      demo: "#",
+      year: "2025",
+      metrics: ["Fully responsive", "Modern UI", "Optimized performance"],
+      github: "https://github.com/RizqiFauu/restoran.v1-simple",
+      demo: "https://restoran-v1-simple.vercel.app/",
     },
+        {
+      title: "Nexus Digital Agency Website",
+      description: "Modern digital agency website with company profile, services, and team showcase",
+      longDescription:
+        "Built a responsive digital agency website featuring company profile, team showcase, values section, and service presentation. Designed with clean UI, modern layout, and smooth user experience to highlight brand identity and digital solutions.",
+      image: "/nexusagency.png",
+      tags: ["Next.js", "Tailwind CSS", "Responsive Design", "UI/UX"],
+      category: "frontend",
+      year: "2025",
+      metrics: ["Responsive design", "Modern UI", "Optimized performance"],
+      github: "https://github.com/RizqiFauu/nexus-agency",
+      demo: "https://nexsus-agency.vercel.app/",
+    },
+      
   ]
 
   const categories = [
