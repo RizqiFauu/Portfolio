@@ -34,7 +34,7 @@ export default function ProjectsPage() {
         description: "Fullstack organization platform with dashboard, task management, and team collaboration",
         longDescription:
           "Developed a fullstack web platform for HIMSI as a collaborative project by the research and development division. Features include internal dashboard, task management system, event management, CRUD data operations, file upload, and real-time updates using Supabase. Built with focus on usability, collaboration, and efficient workflow management.",
-        image: "/himsi-web-preview.png",
+        image: "/himsi.png",
         tags: ["Next.js", "Supabase", "Tailwind CSS", "Fullstack"],
         category: "fullstack",
         year: "2023",
@@ -73,7 +73,7 @@ export default function ProjectsPage() {
         github: "https://github.com/RizqiFauu/restoran.v1-simple",
         demo: "https://restoran-v1-simple.vercel.app/",
       },
-      
+
       {
       title: "Nexus Digital Agency Website",
       description: "Modern digital agency website with company profile, services, and team showcase",
