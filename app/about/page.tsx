@@ -131,50 +131,35 @@ Di luar coding, saya terus belajar melalui project nyata dan eksplorasi teknolog
           >
             <h2 className="text-3xl font-bold mb-8">Technical Stack</h2>
             <div className="grid md:grid-cols-2 gap-8">
-  {Object.entries(technologies).map(([category, techs], idx, arr) => {
-    const isLast = idx === arr.length - 1
+            {Object.entries(technologies).map(([category, techs], idx, arr) => {
+              const isLast = idx === arr.length - 1
 
-    return (
-      <motion.div
-        key={category}
-        className={isLast ? "md:col-span-2 flex justify-center" : ""}
-        initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: idx * 0.1 }}
-      >
-        <div className={isLast ? "w-full md:w-1/2" : ""}>
-          <Card className="p-6 hover:shadow-lg transition-all h-full">
-            <h3 className="text-xl font-bold mb-4">{category}</h3>
-            <div className="flex flex-wrap gap-2">
-              {techs.map((tech) => (
-                <Badge key={tech} variant="outline" className="px-3 py-1">
-                  {tech}
-                </Badge>
-              ))}
-            </div>
-          </Card>
-        </div>
-      </motion.div>
-    )
-  })}
-</div>
+              return (
+                <motion.div
+                  key={category}
+                  className={isLast ? "md:col-span-2 flex justify-center" : ""}
+                  initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                >
+                  <div className={isLast ? "w-full md:w-1/2" : ""}>
+                    <Card className="p-6 hover:shadow-lg transition-all h-full">
+                      <h3 className="text-xl font-bold mb-4">{category}</h3>
+                      <div className="flex flex-wrap gap-2">
+                        {techs.map((tech) => (
+                          <Badge key={tech} variant="outline" className="px-3 py-1">
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </Card>
+                  </div>
+                </motion.div>
+              )
+            })}
+          </div>
 
-          </motion.div>
-
-          {/* CTA */}
-          <motion.div
-            className="mt-20 text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl font-bold mb-4">Let's Work Together</h2>
-            <p className="text-muted-foreground mb-8">Tertarik untuk berkolaborasi atau punya ide project?
-Silakan hubungi saya, saya terbuka untuk diskusi dan kerja sama.</p>
-            <Button size="lg" asChild>
-              <Link href="/contact">Get In Touch</Link>
-            </Button>
           </motion.div>
         </div>
       </div>
