@@ -158,8 +158,7 @@ Di luar coding, saya terus belajar melalui project nyata dan eksplorasi teknolog
                 </motion.div>
               )
             })}
-          </div>
-
+          </div>  
           </motion.div>
         </div>
       </div>

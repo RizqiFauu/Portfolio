@@ -33,7 +33,7 @@ export default function Footer() {
     },
     {
       icon: Mail,
-      href: "mailto:rizqifauzi.dev@gmail.com",
+      href: "mailto:rizqifauzi.dev@outlook.co.id",
     },
   ]
 
