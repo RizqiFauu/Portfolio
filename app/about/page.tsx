@@ -3,18 +3,19 @@
 import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
-import { Code2, Rocket, Users, Award } from "lucide-react"
+import { Code2, Rocket, Users, Award, Figma } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 export default function AboutPage() {
   const technologies = {
-    Frontend: ["HTML", "CSS", "JavaScript", "React", "TypeScript", "Tailwind CSS"],
-    Backend: ["Next.js", "Node.js", "REST API"],
-    Tools: ["Git", "Figma", "VS Code"],
-    Deployment: ["Vercel", "GitHub Repository", "environment Variables"],
-  }
+  Frontend: ["HTML", "CSS", "JavaScript", "React", "TypeScript", "Tailwind CSS"],
+  Backend: ["Next.js", "Node.js", "PHP", "REST API", "Python"],
+  Database: ["MySQL", "Supabase", "Neon DB"],
+  Tools: ["Git", "GitHub", "VS Code", "Prisma", "Figma"],
+  Deployment: ["Vercel", "Environment Variables"],
+}
 
   const achievements = [
     {
